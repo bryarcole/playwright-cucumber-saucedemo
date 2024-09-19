@@ -16,13 +16,4 @@ export class LoginPage {
     await this.page.fill('#password', password);
     await this.page.click('#login-button');
   }
-
-  async assertLoginSuccess(): Promise<void> {
-    await this.page.waitForURL('https://www.saucedemo.com/v1/inventory.html');
-  }
-
-  async assertLoginFailure(): Promise<void> {
-    const errorMessage = await this.page.locator('[data-test="error"]');
-    await errorMessage.waitFor({ state: 'visible' });
-  }
 }
