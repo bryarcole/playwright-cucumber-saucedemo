@@ -1,7 +1,3 @@
-Sure! Here's a draft README for the repository based on the provided link:
-
----
-
 # Playwright Cucumber Saucedemo
 
 This repository contains a sample project demonstrating how to integrate [Playwright](https://playwright.dev/) with [Cucumber](https://cucumber.io/) for end-to-end testing, using the [Sauce Demo](https://www.saucedemo.com/) application as the test subject.
