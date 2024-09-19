@@ -1,34 +1,56 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { page } from '../support/world';
+import { LoginPage } from '../../src/pages/LoginPage';
+import { InventoryPage } from '../../src/pages/InventoryPage';
 
-// Step for navigating to the login page
+let loginPage: LoginPage;
+let inventoryPage: InventoryPage;
+
 Given('I am on the SauceDemo login page', async () => {
-  await page.goto('https://www.saucedemo.com/v1/index.html');
+  loginPage = new LoginPage(page);
+  await loginPage.navigateToLogin();
 });
 
-// Step for logging in with valid credentials
 When('I login with valid credentials', async () => {
-  await page.fill('#user-name', 'standard_user');
-  await page.fill('#password', 'secret_sauce');
-  await page.click('#login-button');
+  await loginPage.login('standard_user', 'secret_sauce');
 });
 
-// Step for logging in with invalid credentials
 When('I login with invalid credentials', async () => {
-  await page.fill('#user-name', 'invalid_user');
-  await page.fill('#password', 'invalid_password');
-  await page.click('#login-button');
+  await loginPage.login('invalid_user', 'invalid_password');
 });
 
-// Step for checking successful login
 Then('I should be redirected to the inventory page', async () => {
-  await expect(page).toHaveURL('https://www.saucedemo.com/v1/inventory.html');
+  await loginPage.assertLoginSuccess();
 });
 
-// Step for checking error message on invalid login
 Then('I should see an error message', async () => {
-  const errorMessage = await page.locator('[data-test="error"]');
-  await expect(errorMessage).toBeVisible();
-  await expect(errorMessage).toContainText('Username and password do not match');
+  await loginPage.assertLoginFailure();
+});
+
+When('I add several items to the cart', async () => {
+  inventoryPage = new InventoryPage(page);
+  await inventoryPage.addItemToCart('sauce-labs-backpack');
+  await inventoryPage.addItemToCart('sauce-labs-bike-light');
+});
+
+Then('I should see {string} items in the cart', async (count: string) => {
+  const cartBadge = await page.locator('.shopping_cart_badge');
+  await expect(cartBadge).toHaveText(count);
+});
+
+When('I proceed to checkout', async () => {
+  await inventoryPage.openCart();
+  await inventoryPage.proceedToCheckout();
+});
+
+When('I fill in my details as {string}, {string}, {string}', async (firstName: string, lastName: string, postalCode: string) => {
+  await inventoryPage.fillCheckoutDetails(firstName, lastName, postalCode);
+});
+
+Then('I should see the order confirmation page', async () => {
+  await inventoryPage.finishCheckout();
+  const confirmationMessage = await page.locator('.complete-header');
+  await expect(confirmationMessage).toBeVisible();
+  await expect(confirmationMessage).toHaveText('THANK YOU FOR YOUR ORDER');
 });
