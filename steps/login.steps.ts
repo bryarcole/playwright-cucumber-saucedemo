@@ -3,6 +3,7 @@ import { expect } from '@playwright/test';
 import { page } from '../Pages/world';
 import { LoginPage } from '../Pages/LoginPage';
 import { InventoryPage } from '../Pages/InventoryPage';
+import { testData } from '../fixtures/fixtures';
 
 let loginPage: LoginPage;
 let inventoryPage: InventoryPage;
