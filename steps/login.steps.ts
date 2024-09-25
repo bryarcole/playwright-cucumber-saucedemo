@@ -1,8 +1,8 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
-import { page } from '../support/world';
-import { LoginPage } from '../../src/pages/LoginPage';
-import { InventoryPage } from '../../src/pages/InventoryPage';
+import { page } from '../Pages/world';
+import { LoginPage } from '../Pages/LoginPage';
+import { InventoryPage } from '../Pages/InventoryPage';
 
 let loginPage: LoginPage;
 let inventoryPage: InventoryPage;
