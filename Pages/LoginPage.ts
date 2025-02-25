@@ -1,6 +1,12 @@
 import { Page } from 'playwright';
 
 export class LoginPage {
+  assertLoginSuccess() {
+    throw new Error('Method not implemented.');
+  }
+  assertLoginFailure() {
+    throw new Error('Method not implemented.');
+  }
   private page: Page;
 
   constructor(page: Page) {
