@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js features/ && node reporter.js",
+    "test": "cucumber-js -c cucumber.js features/ && ts-node reporter.ts",
     "test:chrome": "BROWSER=chromium npm test",
     "test:firefox": "BROWSER=firefox npm test",
     "test:headless": "HEADLESS=true npm test",
     "test:playwright": "playwright test",
     "test:playwright:ui": "playwright test --ui",
-    "test:playwright:report": "playwright show-report"
+    "test:playwright:report": "playwright show-report",
+    "test:playwright:api": "playwright test --project=api",
+    "test:playwright:browser": "playwright test --project=chromium --project=firefox"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
     "@playwright/test": "^1.47.1",
+    "@types/cucumber-html-reporter": "^5.0.0",
     "cucumber-html-reporter": "^7.0.0",
     "playwright": "^1.47.1",
     "ts-node": "^10.9.2",

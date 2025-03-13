@@ -1,6 +1,18 @@
-const reporter = require('cucumber-html-reporter');
+import reporter from 'cucumber-html-reporter';
 
-const options = {
+interface ReporterOptions {
+    theme: 'bootstrap' | 'hierarchy' | 'foundation' | 'simple';
+    jsonFile: string;
+    output: string;
+    reportSuiteAsScenarios: boolean;
+    scenarioTimestamp: boolean;
+    launchReport: boolean;
+    metadata: {
+        [key: string]: string;
+    };
+}
+
+const options: ReporterOptions = {
     theme: 'bootstrap',
     jsonFile: 'reports/cucumber-report.json',
     output: 'reports/cucumber-report.html',

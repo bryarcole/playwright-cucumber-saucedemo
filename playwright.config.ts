@@ -18,12 +18,25 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'api',
+      use: {
+        baseURL: 'https://www.saucedemo.com',
+        extraHTTPHeaders: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      },
+      testMatch: /.*\.api\.spec\.ts/,
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testIgnore: /.*\.api\.spec\.ts/,
     },
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testIgnore: /.*\.api\.spec\.ts/,
     },
   ],
 }); 
