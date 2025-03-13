@@ -1,183 +1,12 @@
 [
   {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "login-api-functionality;successful-login-with-valid-credentials",
-        "keyword": "Scenario",
-        "line": 3,
-        "name": "Successful login with valid credentials",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1314371167
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I have valid credentials",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 243542
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 5,
-            "name": "I send a POST request to login",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:24"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 3629999,
-              "error_message": "apiRequestContext.post: Invalid URL\n    at CustomWorld.<anonymous> (/Users/bryarcole/repos/playwright-cucumber-saucedemo/tests/stepDefinitions/api.login.steps.ts:25:41)"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 6,
-            "name": "I should receive a successful response",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:31"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "the response should contain an access token",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:41"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 82296708
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "login-api-functionality;unsuccessful-login-with-invalid-credentials",
-        "keyword": "Scenario",
-        "line": 9,
-        "name": "Unsuccessful login with invalid credentials",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 533757415
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 10,
-            "name": "I have invalid credentials",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:17"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 106750
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 11,
-            "name": "I send a POST request to login",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:24"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 1083750,
-              "error_message": "apiRequestContext.post: Invalid URL\n    at CustomWorld.<anonymous> (/Users/bryarcole/repos/playwright-cucumber-saucedemo/tests/stepDefinitions/api.login.steps.ts:25:41)"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "I should receive an error response",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:36"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 13,
-            "name": "the error message should be \"Invalid credentials\"",
-            "match": {
-              "location": "tests/stepDefinitions/api.login.steps.ts:46"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 136916708
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "login-api-functionality",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "Login API Functionality",
-    "tags": [],
-    "uri": "features/api/login.feature"
-  },
-  {
-    "description": "",
+    "description": "  As a user\n  I want to be able to log in to the Sauce Demo website\n  So that I can access the products page",
     "elements": [
       {
         "description": "",
         "id": "login-functionality;successful-login-with-valid-credentials",
         "keyword": "Scenario",
-        "line": 3,
+        "line": 6,
         "name": "Successful login with valid credentials",
         "steps": [
           {
@@ -185,46 +14,46 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 513918290
+              "duration": 1117248791
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 4,
+            "line": 7,
             "name": "I open the Sauce Demo login page",
             "match": {
-              "location": "tests/stepDefinitions/login.steps.ts:13"
+              "location": "tests/cucumber/stepDefinitions/login.steps.ts:13"
             },
             "result": {
               "status": "passed",
-              "duration": 391955333
+              "duration": 513822834
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 5,
+            "line": 8,
             "name": "I enter valid credentials",
             "match": {
-              "location": "tests/stepDefinitions/login.steps.ts:17"
+              "location": "tests/cucumber/stepDefinitions/login.steps.ts:18"
             },
             "result": {
               "status": "passed",
-              "duration": 113006374
+              "duration": 111986875
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 6,
+            "line": 9,
             "name": "I should be redirected to the products page",
             "match": {
-              "location": "tests/stepDefinitions/login.steps.ts:29"
+              "location": "tests/cucumber/stepDefinitions/login.steps.ts:32"
             },
             "result": {
               "status": "passed",
-              "duration": 5412959
+              "duration": 6858624
             }
           },
           {
@@ -232,7 +61,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 72179707
+              "duration": 134545458
             }
           }
         ],
@@ -241,56 +70,56 @@
       },
       {
         "description": "",
-        "id": "login-functionality;unsuccessful-login-with-invalid-credentials",
+        "id": "login-functionality;failed-login-with-invalid-credentials",
         "keyword": "Scenario",
-        "line": 8,
-        "name": "Unsuccessful login with invalid credentials",
+        "line": 11,
+        "name": "Failed login with invalid credentials",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 429650208
+              "duration": 532580750
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 9,
+            "line": 12,
             "name": "I open the Sauce Demo login page",
             "match": {
-              "location": "tests/stepDefinitions/login.steps.ts:13"
+              "location": "tests/cucumber/stepDefinitions/login.steps.ts:13"
             },
             "result": {
               "status": "passed",
-              "duration": 285176833
+              "duration": 264991457
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 10,
+            "line": 13,
             "name": "I enter invalid credentials",
             "match": {
-              "location": "tests/stepDefinitions/login.steps.ts:23"
+              "location": "tests/cucumber/stepDefinitions/login.steps.ts:25"
             },
             "result": {
               "status": "passed",
-              "duration": 86533792
+              "duration": 82828250
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
+            "line": 14,
             "name": "I should see an error message",
             "match": {
-              "location": "tests/stepDefinitions/login.steps.ts:33"
+              "location": "tests/cucumber/stepDefinitions/login.steps.ts:37"
             },
             "result": {
               "status": "passed",
-              "duration": 5268583
+              "duration": 2629666
             }
           },
           {
@@ -298,7 +127,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 93298582
+              "duration": 84015249
             }
           }
         ],
@@ -311,6 +140,6 @@
     "keyword": "Feature",
     "name": "Login Functionality",
     "tags": [],
-    "uri": "features/login.feature"
+    "uri": "tests/cucumber/features/login.feature"
   }
 ]

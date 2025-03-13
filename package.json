@@ -12,7 +12,8 @@
     "test:playwright:ui": "playwright test --ui",
     "test:playwright:report": "playwright show-report",
     "test:playwright:api": "playwright test --project=api",
-    "test:playwright:browser": "playwright test --project=chromium --project=firefox"
+    "test:playwright:browser": "playwright test --project=chromium --project=firefox",
+    "test:cucumber:api": "cucumber-js -c cucumber.js features/api/ && ts-node reporter.ts"
   },
   "keywords": [],
   "author": "",

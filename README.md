@@ -1,6 +1,78 @@
-# Playwright Cucumber Saucedemo
+# Playwright Cucumber Sauce Demo
 
-This repository contains a sample project demonstrating how to integrate [Playwright](https://playwright.dev/) with [Cucumber](https://cucumber.io/) for end-to-end testing, using the [Sauce Demo](https://www.saucedemo.com/) application as the test subject.
+This project demonstrates two different approaches to automated testing using Playwright:
+
+## Test Architecture
+
+### 1. Playwright Native Tests (`/tests/playwright/`)
+- Uses Playwright's native test runner
+- Traditional unit test style
+- Direct access to Playwright's API
+- Run with: `npm run test:playwright`
+
+Example:
+```typescript
+test.describe('Login Functionality', () => {
+  test('Successful login', async ({ page }) => {
+    await page.goto('/');
+    await page.fill('#user-name', 'standard_user');
+    // ... more test steps
+  });
+});
+```
+
+### 2. Cucumber BDD Tests (`/tests/cucumber/`)
+- Uses Cucumber for Behavior Driven Development
+- Business-readable feature files
+- Step definitions in TypeScript
+- Run with: `npm test`
+
+Example:
+```gherkin
+Feature: Login Functionality
+  Scenario: Successful login
+    Given I open the Sauce Demo login page
+    When I enter valid credentials
+    Then I should be redirected to the products page
+```
+
+## Running Tests
+
+### Playwright Tests
+```bash
+# Run all Playwright tests
+npm run test:playwright
+
+# Run only UI tests
+npm run test:playwright:browser
+
+# Run only API tests
+npm run test:playwright:api
+
+# Run with UI mode
+npm run test:playwright:ui
+```
+
+### Cucumber Tests
+```bash
+# Run all Cucumber tests
+npm test
+
+# Run only API tests
+npm run test:cucumber:api
+```
+
+## Project Structure
+```
+tests/
+├── playwright/           # Playwright native tests
+│   └── login.spec.ts
+└── cucumber/            # Cucumber BDD tests
+    ├── features/        # Feature files
+    │   └── login.feature
+    └── stepDefinitions/ # Step definitions
+        └── login.steps.ts
+```
 
 ## Features
 
@@ -35,17 +107,6 @@ This repository contains a sample project demonstrating how to integrate [Playwr
 ## Configuration
 
 - **Sauce Demo Credentials**: Update the `sauceDemoConfig.json` file with your Sauce Demo credentials if needed.
-
-## Running Tests
-
-To execute the tests, use the following command:
-```bash
-npm test
-```
-or
-```bash
-yarn test
-```
 
 ## Test Structure
 

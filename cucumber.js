@@ -2,8 +2,7 @@ module.exports = {
     default: {
         requireModule: ['ts-node/register'],
         require: [
-            'tests/stepDefinitions/*.ts',
-            'tests/stepDefinitions/api/*.ts'
+            'tests/cucumber/stepDefinitions/*.ts'
         ],
         format: [
             'progress-bar',
@@ -11,10 +10,8 @@ module.exports = {
             'json:reports/cucumber-report.json'
         ],
         formatOptions: { snippetInterface: 'async-aware' },
-        publishQuiet: true,
         paths: [
-            'features/**/*.feature',
-            'features/api/**/*.feature'
+            'tests/cucumber/features/**/*.feature'
         ]
     }
 }; 
