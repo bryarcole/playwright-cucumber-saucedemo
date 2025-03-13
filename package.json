@@ -7,7 +7,10 @@
     "test": "cucumber-js features/ && node reporter.js",
     "test:chrome": "BROWSER=chromium npm test",
     "test:firefox": "BROWSER=firefox npm test",
-    "test:headless": "HEADLESS=true npm test"
+    "test:headless": "HEADLESS=true npm test",
+    "test:playwright": "playwright test",
+    "test:playwright:ui": "playwright test --ui",
+    "test:playwright:report": "playwright show-report"
   },
   "keywords": [],
   "author": "",
