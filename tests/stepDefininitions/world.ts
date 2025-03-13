@@ -1,9 +1,17 @@
 import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
-import { chromium, firefox, Browser, Page, BrowserContext } from 'playwright';
+import { chromium, firefox, Browser, Page, BrowserContext, APIRequestContext } from 'playwright';
+
+interface LoginCredentials {
+    username: string;
+    password: string;
+}
 
 export class CustomWorld extends World {
     public page!: Page;
     public context!: BrowserContext;
+    public request!: APIRequestContext;
+    public apiCredentials!: LoginCredentials;
+    public apiResponse: any;
     private browser!: Browser;
 
     constructor(options: IWorldOptions) {
@@ -17,6 +25,9 @@ export class CustomWorld extends World {
         });
         this.context = await this.browser.newContext();
         this.page = await this.context.newPage();
+        
+        // Initialize API request context
+        this.request = await this.context.request;
     }
 
     async cleanup() {
