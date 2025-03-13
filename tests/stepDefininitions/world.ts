@@ -11,7 +11,7 @@ export class CustomWorld extends World {
     }
 
     async init() {
-        const browserType = process.env.BROWSER === 'chromium' ? firefox : chromium;
+        const browserType = process.env.BROWSER === 'firefox' ? firefox : chromium;
         this.browser = await browserType.launch({ 
             headless: process.env.HEADLESS === 'true' 
         });

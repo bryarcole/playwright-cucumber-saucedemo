@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js features/"
+    "test": "cucumber-js features/ && node reporter.js",
+    "test:chrome": "BROWSER=chromium npm test",
+    "test:firefox": "BROWSER=firefox npm test",
+    "test:headless": "HEADLESS=true npm test"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +15,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
     "@playwright/test": "^1.47.1",
+    "cucumber-html-reporter": "^7.0.0",
     "playwright": "^1.47.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"

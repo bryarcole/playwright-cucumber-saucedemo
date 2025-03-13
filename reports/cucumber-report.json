@@ -1,0 +1,145 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1177872750
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I open the Sauce Demo login page",
+            "match": {
+              "location": "tests/stepDefininitions/login.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 337042916
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter valid credentials",
+            "match": {
+              "location": "tests/stepDefininitions/login.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 106896332
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I should be redirected to the products page",
+            "match": {
+              "location": "tests/stepDefininitions/login.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4702999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 68160624
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;unsuccessful-login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Unsuccessful login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 553515667
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I open the Sauce Demo login page",
+            "match": {
+              "location": "tests/stepDefininitions/login.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 201235208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I enter invalid credentials",
+            "match": {
+              "location": "tests/stepDefininitions/login.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 81991875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see an error message",
+            "match": {
+              "location": "tests/stepDefininitions/login.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4865249
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 58766875
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Functionality",
+    "tags": [],
+    "uri": "features/login.feature"
+  }
+]
