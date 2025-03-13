@@ -1,5 +1,5 @@
 import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
-import { chromium, Browser, Page, BrowserContext } from 'playwright';
+import { chromium, firefox, Browser, Page, BrowserContext } from 'playwright';
 
 export class CustomWorld extends World {
     public page!: Page;
@@ -11,7 +11,10 @@ export class CustomWorld extends World {
     }
 
     async init() {
-        this.browser = await chromium.launch({ headless: false });
+        const browserType = process.env.BROWSER === 'chromium' ? firefox : chromium;
+        this.browser = await browserType.launch({ 
+            headless: process.env.HEADLESS === 'true' 
+        });
         this.context = await this.browser.newContext();
         this.page = await this.context.newPage();
     }
