@@ -1,13 +1,10 @@
 module.exports = {
-    default: {
-      require: [
-        'features/**/*.ts',  // Load step definitions
-        'features/support/world.ts',  // Load world
-      ],
-      format: ['progress'],
-      publishQuiet: true,
-      paths: ['features/**/*.feature'],
-      requireModule: ['ts-node/register'],  // Compile TypeScript at runtime
-    }
-  };
-  
+  default: {
+    requireModule: ['ts-node/register'],
+    require: ['tests/stepDefininitions/*.ts'],
+    format: ['progress-bar', 'html:cucumber-report.html'],
+    formatOptions: { snippetInterface: 'async-await' },
+    publishQuiet: true,
+    paths: ['features/**/*.feature'],
+  }
+};

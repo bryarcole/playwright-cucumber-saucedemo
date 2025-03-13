@@ -1,10 +1,7 @@
-Feature: Login to Sauce Demo
-
-  As a user, I want to log in to the Sauce Demo application
-  so that I can access my inventory.
+Feature: Login Functionality
 
   Scenario: Successful login with valid credentials
-    Given I open the Sauce Demo login page
+    Given I open the Suace Demo login page
     When I enter valid credentials
     Then I should be redirected to the products page
 
